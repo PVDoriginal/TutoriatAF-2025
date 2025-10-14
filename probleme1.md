@@ -77,7 +77,7 @@ while queue:
 </details>
 
 ## Arbore
-Determinarea unei liste de parinti dintr-un graf aciclic 
+Determinarea unei liste de parinti dintr-un graf aciclic.
 [Link problema](https://www.pbinfo.ro/probleme/636/arbore). 
 
 <details>
@@ -111,6 +111,40 @@ find_parents(k - 1)
 
 for i in parents:
     out.write(str(i) + " ")
+```
+
+</details>
+
+## Afisare Fii 
+Afisarea fiilor fiecarui nod dintr-un arbore.
+[Link problema](https://www.pbinfo.ro/probleme/652/afisarefii). 
+
+<details>
+
+<summary>Solutie Python</summary>
+
+```python
+file = open("afisarefii.in")
+out = open("afisarefii.out", "w")
+
+n = int(file.readline())
+parents = list(map(int, file.readline().split()))
+
+k = int(file.readline())
+nodes = list(map(int, file.readline().split()))
+
+res = [[] for _ in range(k)]
+
+for i in range(k):
+    for j in range(n):
+        if parents[j] == nodes[i]:
+            res[i].append(j)
+
+for i in range(k):
+    out.write(str(len(res[i])) + " ")
+    for x in res[i]:
+        out.write(str(x + 1) + " ")
+    out.write("\n")
 ```
 
 </details>
