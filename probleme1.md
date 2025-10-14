@@ -1,5 +1,42 @@
 # Lista de probleme 1 
 
+## DFS 
+Parcurgerea DFS a unui graf.
+[Link problema](https://www.pbinfo.ro/probleme/539/dfs). 
+
+<details>
+
+<summary>Solutie Python</summary>
+
+```python
+file = open("dfs.in")
+out = open("dfs.out", "w")
+
+def dfs(a):
+    visited[a] = True
+    out.write(str(a + 1) + " ")
+
+    for b in sorted(graf[a]):
+        if not visited[b]:
+            dfs(b)
+
+n, m, x = map(int, file.readline().split())
+
+graf = [[] for _ in range(n)]
+visited = [False for _ in range(n)]
+
+for _ in range(m):
+    a, b = map(int, file.readline().split())
+
+    graf[a - 1].append(b - 1)
+    graf[b - 1].append(a - 1)
+
+dfs(x - 1)
+
+```
+
+</details>
+
 ## BFS 
 Parcurgerea BFS a unui graf.
 [Link problema](https://www.pbinfo.ro/probleme/19/bfs). 
@@ -38,3 +75,4 @@ while queue:
 ```
 
 </details>
+
