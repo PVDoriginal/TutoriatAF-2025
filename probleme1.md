@@ -76,3 +76,41 @@ while queue:
 
 </details>
 
+## Arbore
+Determinarea unei liste de parinti dintr-un graf aciclic 
+[Link problema](https://www.pbinfo.ro/probleme/636/arbore). 
+
+<details>
+
+<summary>Solutie Python</summary>
+
+```python
+file = open("arbore.in")
+out = open("arbore.out", "w")
+
+def find_parents(a):
+    for b in sorted(graf[a]):
+        if parents[b] == -1:
+            parents[b] = a + 1
+            find_parents(b)
+
+n, k = map(int, file.readline().split())
+
+graf = [[] for _ in range(n)]
+
+for _ in range(n - 1):
+    a, b = map(int, file.readline().split())
+
+    graf[a - 1].append(b - 1)
+    graf[b - 1].append(a - 1)
+
+parents = [-1 for _ in range(n)]
+parents[k - 1] = 0
+
+find_parents(k - 1)
+
+for i in parents:
+    out.write(str(i) + " ")
+```
+
+</details>
