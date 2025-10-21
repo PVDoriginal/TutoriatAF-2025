@@ -8,7 +8,9 @@ De exemplu, pentru graful:
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/5072bd95-12c0-4a3b-84a6-28643dd5c3dd" />
 
 Un nod critic este 8. 
+
 Putem observa ca graful se separat in 2 componente conexe daca il stergem:
+
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/6cca3db5-78d0-4387-80e5-6f6a2000bedc" />
 
 Iar o muchie critica este 7-8 (muchia dintre 7 si 8). 
